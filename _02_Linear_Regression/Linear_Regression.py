@@ -15,7 +15,7 @@ def ridge(data):
     XT_X = np.dot(X.T, X)
     I = np.identity(XT_X.shape[0])
     weight = np.dot(np.dot(np.linalg.inv(XT_X + alpha * I), X.T), y)
-    return weight [:-1] @ data
+    return weight [:-1] @ data,w[-1] @ b
     
 def lasso(data):
     learning_rate = 1e-10
