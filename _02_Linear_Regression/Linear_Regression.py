@@ -10,7 +10,7 @@ except ImportError as e:
 
 def ridge(data):
     X, y = read_data()
-    alpha = 0.1
+    alpha = 0.01
     X = np.hstack((X, np.ones((X.shape[0], 1))))
     XT_X = np.dot(X.T, X)
     I = np.identity(XT_X.shape[0])
