@@ -11,11 +11,10 @@ except ImportError as e:
 def ridge(data):
     X, y = read_data()
     alpha = -0.1
-    X = np.hstack((X, np.ones((X.shape[0], 1))))
     XT_X = np.dot(X.T, X)
     I = np.identity(XT_X.shape[0])
-    weight = np.dot(X,np.dot(np.dot(np.linalg.inv(XT_X + alpha * I), X.T), y))
-    return weight [:-1] @ data
+    weight = np.dot(np.dot(np.linalg.inv(XT_X + alpha * I), X.T), y)
+    return weight  @ data
     
 def lasso(data):
     learning_rate = 1e-10
