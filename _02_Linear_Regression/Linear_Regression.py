@@ -19,9 +19,9 @@ def ridge(data):
 def lasso(data):
     learning_rate = 1e-10
     max_iter = 10000
-    alpha = 0.1
+    alpha = 3000
     X, y = read_data()
-    weight = np.zeros(X.shape[1])
+    weight = data
     for i in range(max_iter):
         gradient = np.dot(X.T, (np.dot(X, weight) - y)) + alpha * np.sign(weight)
         weight =weight - learning_rate * gradient
