@@ -19,7 +19,7 @@ def ridge(data):
 def lasso(data):
     learning_rate = 1e-10
     max_iter = 10000
-    alpha = 3000
+    alpha = 0.1
     X, y = read_data()
     weight = data
     for i in range(max_iter):
